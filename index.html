@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IT Automation Showcase</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 p-8">
+  <div class="max-w-3xl mx-auto">
+    <header class="text-center mb-10">
+      <h1 class="text-4xl font-bold mb-2">IT Automation Showcase</h1>
+      <p class="text-lg text-gray-600">Scan the QR code below to explore my automations</p>
+    </header>
+
+    <div class="flex flex-col items-center bg-white p-6 shadow-lg rounded-2xl">
+      <canvas id="qr-code" class="mb-4"></canvas>
+      <p class="text-center text-gray-500">Scan to view: <span id="qr-link" class="font-semibold"></span></p>
+    </div>
+
+    <section class="mt-10">
+      <h2 class="text-2xl font-semibold mb-4">Showcase Links</h2>
+      <ul class="space-y-3 text-blue-600">
+        <li><a href="#" class="underline">Network Outage Alert Automation</a></li>
+        <li><a href="#" class="underline">Google Sheets Data Automation</a></li>
+        <li><a href="#" class="underline">IT Support Workflow Diagram</a></li>
+        <li><a href="#" class="underline">IT Dashboard Demo Sheet</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <script>
+    const showcaseURL = "https://your-showcase-link.com";
+    document.getElementById("qr-link").textContent = showcaseURL;
+
+    const qr = new QRious({
+      element: document.getElementById("qr-code"),
+      value: showcaseURL,
+      size: 250,
+      level: 'H'
+    });
+  </script>
+</body>
+</html>
